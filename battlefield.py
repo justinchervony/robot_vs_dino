@@ -5,7 +5,7 @@ from dinosaur import Dinosaur
 class Battlefield:
     def __init__(self):
         self.robot_combatant = Robot("Mechazord")
-        self.dino_combatant = Dinosaur("Rex", 35)
+        self.dino_combatant = Dinosaur("Rex", 30)
     def run_game(self):
         self.display_welcome()
         self.battle_phase()

@@ -7,9 +7,18 @@ class Robot:
 
         self.name = name
         self.health = 100
-        self.active_weapon = Weapon("Laser Sword", 30)
-        pass
+        self.active_weapon = Weapon("Sword", 30)
     def attack(self, dinosaur):
+        weapon_choice = input(f"Choose {self.name}'s weapon. Type 'Sword', 'Gun', or 'Kick'. ")
+        if weapon_choice == "Sword":
+            self.active_weapon = Weapon("Sword", 30)
+        elif weapon_choice == "Gun":
+            self.active_weapon = Weapon("Gun", 25)
+        elif weapon_choice == "Kick":
+            self.active_weapon = Weapon("Kick", 15)
+        else:
+            pass
+
         attack_result = random.randint(1,100)
         if attack_result <= 5:
             print(f"{self.name} attacks but misses {dinosaur.name}!")
