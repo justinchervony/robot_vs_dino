@@ -11,6 +11,10 @@ class Dinosaur:
         self.health = 100
     def attack(self, robot):
         attack_result = random.randint(1,100)
+        if robot.active_weapon.name == "Gun":
+            attack_result -= 20
+        elif robot.active_weapon.name == "Kick":
+            attack_result -= 10
         if attack_result <= 5:
             print(f"{self.name} attacks but misses {robot.name}!")
         elif attack_result >= 96:
